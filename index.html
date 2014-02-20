@@ -1,0 +1,80 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geochart']});
+   google.setOnLoadCallback(drawRegionsMap);
+ 
+    function drawRegionsMap() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Country');
+      data.addColumn('number', 'Download');
+      data.addRows([
+        ['United States', 45],
+        ['Brazil', 26.8],
+        ['Germany', 12.8],
+        ['Italy', 8.5],
+        ['Vietnam', 6.2]
+      ]);
+ 
+      var options = { backgroundColor: 'white',
+      colorAxis: { colors: ['#6289cb', '#446595'] }
+      };
+ 
+      var chart = new google.visualization.GeoChart(document.getElementById('mapContainer'));
+      chart.draw(data, options);
+ 
+  };
+  </script>
+<style type="text/css">
+ 
+body 
+{		
+ 
+	color:#333333;
+	font-size:16px;
+	margin: 0 auto; 
+	text-align: center; 
+ 
+}
+ 
+h2 
+{	
+	font-size: 28px;
+	text-align:center;
+        padding-top:40px;
+}
+ 
+a
+{
+	text-decoration:none;
+}
+ 
+p
+{
+	text-align:center;
+}
+ 
+#mainwrap
+{
+	width: auto;
+	margin: 0 auto;		
+}
+ 
+#mapContainer
+{
+    height: 208px;
+    width: 282px;
+    border:1px solid #ccc;
+    border-width: 1px 1px 1px 1px;
+    margin:0 auto; 
+}
+</style>
+ 
+</head>
+<body>
+<div id="mainwrap">
+  <div id='mapContainer'></div>
+</div>
+</body>
+</html>
